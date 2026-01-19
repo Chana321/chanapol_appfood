@@ -27,6 +27,7 @@ import 'Food-dessert_Video/video_banoffi.dart';
 import 'Food-dessert_Video/video_mangocake.dart';
 import 'Food-dessert_Video/video_pudding.dart';
 
+// app
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
