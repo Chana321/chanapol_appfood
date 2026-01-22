@@ -35,9 +35,12 @@ jobs:
       - name: Build APK (Release)
         run: flutter build apk --release
 
+      - name: Rename APK
+        run: mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/chanafood.apk
+
       - name: Upload APK to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v1.0.2
-          name: "Best_food APK (Developer: sutee-f)"
-          files: build/app/outputs/flutter-apk/app-release.apk
+          tag_name: v1.0.4
+          name: "Chanafood APK (Developer: sutee-f)"
+          files: build/app/outputs/flutter-apk/chanafood.apk
