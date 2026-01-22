@@ -31,8 +31,11 @@ jobs:
       - name: Build APK (Release)
         run: flutter build apk --release
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
+      - name: Upload APK to GitHub Release
+        uses: softprops/action-gh-release@v1
         with:
-          name: Best_food_APK
-          path: build/app/outputs/flutter-apk/app-release.apk
+          tag_name: v1.0.0
+          name: Best_food APK (Developer: sutee-f)
+          files: build/app/outputs/flutter-apk/app-release.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
