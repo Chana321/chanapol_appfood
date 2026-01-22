@@ -1,4 +1,4 @@
-name: Best_food
+name: Best_food APK
 
 on:
   push:
@@ -22,16 +22,17 @@ jobs:
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          flutter-version: '3.38.7'
+          cache: true
 
       - name: Flutter pub get
         run: flutter pub get
 
-      - name: Build APK
+      - name: Build APK (Release)
         run: flutter build apk --release
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Best_food
+          name: Best_food_APK
           path: build/app/outputs/flutter-apk/app-release.apk
